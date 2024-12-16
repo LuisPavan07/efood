@@ -23,7 +23,7 @@ export const BannerImg = styled.div`
     color: #e66767;
     font-size: 36px;
     font-weight: 900;
-    margin-top: 168px;
+    margin-top: 128px;
     display: flex;
     justify-content: center;
     text-align: center;

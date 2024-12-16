@@ -35,6 +35,7 @@ export const Title = styled.h3`
 `
 
 export const Infos = styled.div`
+  display: flex;
   font-size: 18px;
   font-weight: 700;
   color: ${cores.vermelha};

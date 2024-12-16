@@ -3,8 +3,10 @@ import { BannerContainer } from './styles'
 
 const RestaurantBanner = () => (
   <BannerContainer style={{ backgroundImage: `url(${italianPerfil})` }}>
-    <p>Italiana</p>
-    <h2>La Dolce Vita Trattoria</h2>
+    <div className="container">
+      <p>Italiana</p>
+      <h2>La Dolce Vita Trattoria</h2>
+    </div>
   </BannerContainer>
 )
 

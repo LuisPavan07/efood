@@ -21,12 +21,11 @@ export const BannerContainer = styled.div`
   }
 
   p {
-    padding: 24px 0px 156px 170px;
+    padding: 24px 0px 156px 0px;
     font-size: 32px;
   }
 
   h2 {
-    margin-left: 170px;
     position: absolute;
     z-index: 2;
     font-size: 32px;
