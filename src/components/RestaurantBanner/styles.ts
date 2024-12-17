@@ -23,6 +23,9 @@ export const BannerContainer = styled.div`
   p {
     padding: 24px 0px 156px 0px;
     font-size: 32px;
+    font-weight: 100;
+    position: relative;
+    color: ${cores.branca};
   }
 
   h2 {
