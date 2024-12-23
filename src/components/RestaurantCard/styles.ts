@@ -15,8 +15,11 @@ export const Card = styled.div`
     right: 8px;
   }
 
-  img {
+  > img {
     width: 100%;
+    height: 216px;
+    display: flex;
+    object-fit: cover;
   }
 `
 
