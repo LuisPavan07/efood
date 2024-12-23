@@ -5,7 +5,7 @@ import Perfil from './pages/Perfil'
 const Rotas = () => (
   <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/Produtos" element={<Perfil />} />
+    <Route path="/produto/:id" element={<Perfil />} />
   </Routes>
 )
 

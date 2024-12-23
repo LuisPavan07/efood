@@ -4,19 +4,23 @@ import starRate from '../../assets/images/star_rate.svg'
 import Button from '../Button'
 
 export type Props = {
+  id: number
   title: string
   image: string
   description: string
   category: string
   infos: string[]
+  rating: number
 }
 
 const RestaurantCard = ({
+  id,
   title,
   image,
   category,
   description,
-  infos
+  infos,
+  rating
 }: Props) => (
   <Card>
     <img src={image} alt={title} />
@@ -26,13 +30,18 @@ const RestaurantCard = ({
         <Title>{title}</Title>
         <Infos>
           {infos.map((info) => (
-            <span key={info}>{info}</span>
+            <Tag key={id}>{info}</Tag>
           ))}
+          <span>{rating}</span>
           <Star src={starRate} alt="Star icon" />
         </Infos>
       </TitleCard>
       <Description>{description}</Description>
-      <Button to="/Produtos" type="link" title="Clique aqui para acessar">
+      <Button
+        to={`/produto/${id}`}
+        type="link"
+        title="Clique aqui para acessar"
+      >
         Saiba mais
       </Button>
     </div>

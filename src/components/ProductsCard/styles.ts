@@ -6,9 +6,13 @@ export const ProdutoCard = styled.div`
   width: 320px;
   height: 336px;
   padding: 8px;
+  border-radius: 8px;
 
   img {
+    width: 304px;
+    height: 167px;
     display: block;
+    border-radius: 8px;
   }
 
   h3 {
@@ -24,4 +28,78 @@ export const ProdutoCard = styled.div`
     margin-bottom: 8px;
     line-height: 21px;
   }
+`
+
+export const Modal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  &.visivel {
+    display: flex;
+  }
+`
+
+export const ModalContent = styled.div`
+  color: ${cores.branca};
+  background-color: ${cores.vermelha};
+  width: 1024px;
+  height: 344px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+
+  header {
+    display: flex;
+    justify-content: flex-end;
+
+    img {
+      width: 16px;
+      height: 16px;
+      margin: 8px;
+      cursor: pointer;
+    }
+  }
+
+  .product {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 32px;
+
+    img {
+      width: 280px;
+      height: 280px;
+      object-fit: fill;
+      margin-right: 24px;
+    }
+
+    p {
+      margin-top: 16px;
+      line-height: 22px;
+    }
+
+    button {
+      margin-top: 16px;
+      width: 218px;
+      height: 24px;
+      cursor: pointer;
+    }
+  }
+`
+
+export const ModalOverlay = styled.div`
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
 `

@@ -27,12 +27,11 @@ export const BannerContainer = styled.div`
     position: relative;
     color: ${cores.branca};
   }
-
-  h2 {
-    position: absolute;
-    z-index: 2;
-    font-size: 32px;
-    font-weight: 900;
-    line-height: 36px;
-  }
+`
+export const Title = styled.h2`
+  position: absolute;
+  z-index: 2;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 36px;
 `
