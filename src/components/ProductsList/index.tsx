@@ -1,9 +1,9 @@
-import { Restaurant } from '../../pages/Home'
+import { Cardapio } from '../../pages/Home'
 import ProductCard from '../ProductsCard'
 import { List, ProductContainer } from './styles'
 
 export type Props = {
-  produtos: Restaurant[]
+  produtos: Cardapio[]
 }
 
 const ProductList = ({ produtos }: Props) => {

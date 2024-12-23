@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react'
 import ProductList from '../../components/ProductsList'
 import HeaderPerfil from '../../components/HeaderPerfil'
 import RestaurantBanner from '../../components/RestaurantBanner'
-import { Restaurant } from '../Home'
+import { Cardapio } from '../Home'
 
 const Perfil = () => {
   const { id } = useParams()
-  const [produtos, setProdutos] = useState<Restaurant[]>([])
+  const [produtos, setProdutos] = useState<Cardapio[]>([])
 
   useEffect(() => {
     fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
