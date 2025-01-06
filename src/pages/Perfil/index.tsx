@@ -13,7 +13,7 @@ const Perfil = () => {
   useEffect(() => {
     fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
       .then((res) => res.json())
-      .then((res) => setProdutos(res))
+      .then((res) => setProdutos(res.cardapio))
   }, [id])
 
   return (

@@ -24,7 +24,6 @@ const RestaurantCard = ({
 }: Props) => (
   <Card>
     <img src={image} alt={title} />
-    <Tag>{category}</Tag>
     <div>
       <TitleCard>
         <Title>{title}</Title>

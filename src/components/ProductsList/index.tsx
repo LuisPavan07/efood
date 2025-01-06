@@ -7,16 +7,24 @@ export type Props = {
 }
 
 const ProductList = ({ produtos }: Props) => {
+  const getDescricaoCurta = (descricao: string) => {
+    if (descricao.length > 165) {
+      return descricao.slice(0, 162) + '...'
+    }
+    return descricao
+  }
+
   return (
     <ProductContainer>
       <List>
         {produtos.map((produto) => (
           <ProductCard
             key={produto.id}
-            id={produto.id}
-            foto={produto.foto}
-            nome={produto.nome}
-            descricao={produto.descricao}
+            produto={{
+              ...produto,
+              descricao: getDescricaoCurta(produto.descricao)
+            }}
+            descricaoCompleta={produto.descricao}
           />
         ))}
       </List>

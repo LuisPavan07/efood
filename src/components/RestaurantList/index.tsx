@@ -9,9 +9,11 @@ export type Props = {
 const RestaurantList = ({ restaurantes }: Props) => {
   const getInfos = (restaurantes: Restaurant) => {
     const infos = [restaurantes.tipo]
+
     if (restaurantes.destacado) {
-      infos.push('Destque da Semana')
+      infos.push('Destaque da Semana')
     }
+
     return infos
   }
 

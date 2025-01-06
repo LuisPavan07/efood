@@ -13,6 +13,7 @@ export const ProdutoCard = styled.div`
     height: 167px;
     display: block;
     border-radius: 8px;
+    object-fit: cover;
   }
 
   h3 {
@@ -78,6 +79,11 @@ export const ModalContent = styled.div`
       height: 280px;
       object-fit: fill;
       margin-right: 24px;
+      object-fit: cover;
+    }
+
+    h4 {
+      font-size: 18px;
     }
 
     p {
