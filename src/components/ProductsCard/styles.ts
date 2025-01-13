@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const ProdutoCard = styled.div`
   background-color: ${cores.vermelha};
@@ -45,6 +45,19 @@ export const Modal = styled.div`
   &.visivel {
     display: flex;
   }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 768px;
+    max-width: 100%;
+
+    .container {
+      max-width: 88%;
+    }
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 72%;
+  }
 `
 
 export const ModalContent = styled.div`
@@ -77,7 +90,6 @@ export const ModalContent = styled.div`
     img {
       width: 280px;
       height: 280px;
-      object-fit: fill;
       margin-right: 24px;
       object-fit: cover;
     }
@@ -97,6 +109,45 @@ export const ModalContent = styled.div`
       height: 24px;
       cursor: pointer;
     }
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    max-width: 90%;
+
+    .product {
+      align-items: center;
+  }
+
+  
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 88%;
+    height: 600px;
+
+    .product {
+      max-height: 80%;
+      padding: 0 16px;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+
+      img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+      }
+
+      h4 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 16px;
+      }
+
+      button {
+        width: 100%;
+      }
   }
 `
 

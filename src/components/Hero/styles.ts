@@ -1,10 +1,15 @@
 import styled from 'styled-components'
+import { breakpoints } from '../../styles'
 
 export const BannerImg = styled.div`
   width: 100%;
   height: 380px;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    height: 14em;
+  }
 
   .container {
     display: flex;
@@ -27,5 +32,10 @@ export const BannerImg = styled.div`
     display: flex;
     justify-content: center;
     text-align: center;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      margin-top: 1.5em;
+      font-size: 24px;
+    }
   }
 `

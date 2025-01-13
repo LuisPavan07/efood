@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const BannerContainer = styled.div`
   width: 100%;
@@ -9,6 +9,13 @@ export const BannerContainer = styled.div`
   display: block;
   position: relative;
   color: ${cores.branca};
+
+  .container {
+    width: 1024px;
+    @media (max-width: ${breakpoints.desktop}) {
+      max-width: 88%;
+    }
+  }
 
   &::before {
     content: '';
@@ -26,6 +33,10 @@ export const BannerContainer = styled.div`
     font-weight: 100;
     position: relative;
     color: ${cores.branca};
+
+    @media (max-width: ${breakpoints.desktop}) {
+      font-size: 24px;
+    }
   }
 `
 export const Title = styled.h2`

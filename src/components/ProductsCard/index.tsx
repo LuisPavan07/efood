@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import Button from '../Button'
 import { Modal, ModalContent, ModalOverlay, ProdutoCard } from './styles'
-
-// import marguerita from '../../assets/images/marguerita.svg'
 import close from '../../assets/images/close.png'
 import { Cardapio } from '../../pages/Home'
+import { useDispatch } from 'react-redux'
+import { add, open } from '../../store/reducers/cart'
 
 type ProductProps = {
   produto: Cardapio
@@ -13,6 +13,13 @@ type ProductProps = {
 
 const ProductCard = ({ produto, descricaoCompleta }: ProductProps) => {
   const [modalEstaAberto, setModalEstaAberto] = useState(false)
+
+  const dispatch = useDispatch()
+
+  const addToCart = () => {
+    dispatch(add(produto))
+    dispatch(open())
+  }
 
   return (
     <>
@@ -50,7 +57,11 @@ const ProductCard = ({ produto, descricaoCompleta }: ProductProps) => {
                   {descricaoCompleta} <br /> <br />
                   Serve: de {produto.porcao}
                 </p>
-                <Button type="button" title="clique para adicionar ao carrinho">
+                <Button
+                  type="button"
+                  title="clique para adicionar ao carrinho"
+                  onClick={addToCart}
+                >
                   {`Adicionar ao carrinho - R$ ${produto.preco}`}
                 </Button>
               </div>

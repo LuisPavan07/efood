@@ -17,7 +17,6 @@ const RestaurantCard = ({
   id,
   title,
   image,
-  category,
   description,
   infos,
   rating
