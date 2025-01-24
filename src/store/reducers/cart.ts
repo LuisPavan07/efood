@@ -3,7 +3,7 @@ import { Cardapio } from '../../pages/Home'
 
 type CartState = {
   items: Cardapio[]
-  isOpen: boolean
+  isOpen: ConstrainBoolean
 }
 
 const initialState: CartState = {
