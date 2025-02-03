@@ -23,16 +23,18 @@ const RestaurantCard = ({
 }: Props) => (
   <Card>
     <img src={image} alt={title} />
+    <Infos className="infoTag">
+      {infos.map((info) => (
+        <Tag key={id}>{info}</Tag>
+      ))}
+    </Infos>
     <div>
       <TitleCard>
         <Title>{title}</Title>
-        <Infos>
-          {infos.map((info) => (
-            <Tag key={id}>{info}</Tag>
-          ))}
-          <span>{rating}</span>
+        <div>
+          <span className="rate">{rating}</span>
           <Star src={starRate} alt="Star icon" />
-        </Infos>
+        </div>
       </TitleCard>
       <Description>{description}</Description>
       <Button

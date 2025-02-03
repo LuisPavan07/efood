@@ -47,8 +47,7 @@ export const Modal = styled.div`
   }
 
   @media (max-width: ${breakpoints.desktop}) {
-    width: 768px;
-    max-width: 100%;
+    width: 100%;
 
     .container {
       max-width: 88%;
@@ -118,7 +117,7 @@ export const ModalContent = styled.div`
       align-items: center;
   }
 
-  
+
   @media (max-width: ${breakpoints.tablet}) {
     max-width: 88%;
     height: 600px;

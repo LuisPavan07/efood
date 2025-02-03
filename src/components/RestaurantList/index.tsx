@@ -1,4 +1,3 @@
-import { Restaurant } from '../../pages/Home'
 import RestaurantCard from '../RestaurantCard'
 import { Container, List } from './styles'
 
@@ -9,7 +8,6 @@ export type Props = {
 const RestaurantList = ({ restaurantes }: Props) => {
   const getInfos = (restaurantes: Restaurant) => {
     const infos = [restaurantes.tipo]
-
     if (restaurantes.destacado) {
       infos.push('Destaque da Semana')
     }

@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Button from '../Button'
 import { Modal, ModalContent, ModalOverlay, ProdutoCard } from './styles'
 import close from '../../assets/images/close.png'
-import { Cardapio } from '../../pages/Home'
 import { useDispatch } from 'react-redux'
 import { add, open } from '../../store/reducers/cart'
 

@@ -10,7 +10,7 @@ export const Overlay = styled.div`
   width: 100%;
   height: 100%;
   background-color: #000;
-  opacity: 0.7;
+  opacity: 0.45;
 `
 
 export const CartContainer = styled.div`
@@ -28,7 +28,7 @@ export const CartContainer = styled.div`
   }
 
   @media (max-width: ${breakpoints.desktop}) {
-    max-width: 768px;
+    width: 100%;
   }
 
   @media (max-width: ${breakpoints.tablet}) {
@@ -46,6 +46,11 @@ export const Sidebar = styled.aside`
 
   ${ButtonContainer} {
     font-size: 16px;
+    margin-top: 8px;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 320px;
   }
 
   .empty-cart {
@@ -100,6 +105,10 @@ export const CartItem = styled.li`
     bottom: 8px;
     right: 8px;
     cursor: pointer;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 304px;
   }
 `
 

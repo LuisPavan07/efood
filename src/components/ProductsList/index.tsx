@@ -1,9 +1,9 @@
-import { Cardapio } from '../../pages/Home'
 import ProductCard from '../ProductsCard'
 import { List, ProductContainer } from './styles'
 
 export type Props = {
   produtos: Cardapio[]
+  isLoading: boolean
 }
 
 const ProductList = ({ produtos }: Props) => {

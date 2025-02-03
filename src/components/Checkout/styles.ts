@@ -1,11 +1,10 @@
 import { styled } from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 import { ButtonContainer } from '../Button/styles'
 
-export const Form = styled.form`
+export const CardForm = styled.form`
   max-width: 360px;
-  padding: 32px 8px 0px 8px;
-  background-color: ${cores.vermelha};
+  padding: 32px 8px;
 
   h2 {
     color: ${cores.footerBackgroundColor};
@@ -26,6 +25,13 @@ export const Row = styled.div`
   flex-direction: column;
   margin-bottom: 24px;
 
+  p {
+    color: ${cores.footerBackgroundColor};
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 16px;
+  }
+
   .row-group {
     display: flex;
     justify-content: space-between;
@@ -33,6 +39,10 @@ export const Row = styled.div`
     input {
       max-width: 155px;
       margin-right: 32px;
+
+      @media (max-width: ${breakpoints.tablet}) {
+        max-width: 136px;
+      }
     }
   }
 `
@@ -42,15 +52,28 @@ export const InputGroup = styled.div`
     color: ${cores.footerBackgroundColor};
     font-size: 14px;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin: 8px 0;
     display: block;
   }
 
-  input {
+  input,
+  select {
     background-color: ${cores.footerBackgroundColor};
     border: 1px solid ${cores.branca};
     width: 344px;
     height: 32px;
-    margin-bottom: 8px;
+
+    &.error {
+      border: 2px solid red;
+      background-color: pink;
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+      max-width: 304px;
+    }
+  }
+
+  small {
+    color: ${cores.branca};
   }
 `

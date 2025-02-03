@@ -37,5 +37,10 @@ export const BannerImg = styled.div`
       margin-top: 1.5em;
       font-size: 24px;
     }
+
+    @media (max-width: ${breakpoints.tablet}) {
+      margin-top: 1.5em;
+      font-size: 16px;
+    }
   }
 `

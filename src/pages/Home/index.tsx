@@ -1,27 +1,8 @@
 import Hero from '../../components/Hero'
+import Loader from '../../components/Loader'
 import RestaurantList from '../../components/RestaurantList'
 
 import { useGetRestaurantGuideQuery } from '../../services/api'
-
-export type Cardapio = {
-  foto: string
-  preco: number
-  id: number
-  nome: string
-  descricao: string
-  porcao: string
-}
-
-export type Restaurant = {
-  titulo: string
-  id: number
-  destacado?: string
-  tipo: string
-  avaliacao: number
-  descricao: string
-  capa: string
-  cardapio: Cardapio[]
-}
 
 const Home = () => {
   const { data: restaurantGuide } = useGetRestaurantGuideQuery()
@@ -35,7 +16,7 @@ const Home = () => {
     )
   }
 
-  return <h4>Carregando...</h4>
+  return <Loader />
 }
 
 export default Home

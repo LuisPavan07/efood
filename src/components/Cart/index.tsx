@@ -25,8 +25,11 @@ export const Cart = () => {
   }
 
   const getTotalPrice = () => {
-    return items.reduce((acumulador, valorAtual) => {
-      return (acumulador += valorAtual.preco)
+    return items.reduce((accumulator, currentItem) => {
+      if (currentItem.preco) {
+        return accumulator + currentItem.preco
+      }
+      return 0
     }, 0)
   }
 
@@ -43,53 +46,56 @@ export const Cart = () => {
     <>
       <CartContainer className={isOpen ? 'is-open' : ''}>
         <Overlay onClick={closeCart} />
-        {!showCheckout && (
-          <Sidebar>
-            {items.length > 0 ? (
-              <>
-                <ul>
-                  {items.map((item) => (
-                    <CartItem key={item.id}>
-                      <img src={item.foto} alt={item.nome} />
-                      <div>
-                        <h3>{item.nome}</h3>
-                        <span>{formatPrice(item.preco)}</span>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() => removeItem(item.id)}
-                      />
-                    </CartItem>
-                  ))}
-                </ul>
-                <Prices>
-                  Valor total
-                  <span>{formatPrice(getTotalPrice())}</span>
-                </Prices>
-                <Button
-                  title="Clique para continuar com a compra"
-                  type="button"
-                  onClick={goToCheckout}
-                >
-                  Continuar com a entrega
-                </Button>
-              </>
-            ) : (
-              <div className="empty-cart">
-                <p>Seu carrinho está vazio.</p>
-                <Button
-                  onClick={closeCart}
-                  title="Voltar as compras"
-                  type="button"
-                >
-                  Voltar as compras
-                </Button>
-              </div>
-            )}
-          </Sidebar>
-        )}
+        {!showCheckout && <Overlay onClick={closeCart} />}
+        <Sidebar>
+          {items.length > 0 ? (
+            <>
+              <ul>
+                {items.map((item) => (
+                  <CartItem key={item.id}>
+                    <img src={item.foto} alt={item.nome} />
+                    <div>
+                      <h3>{item.nome}</h3>
+                      <span>{formatPrice(item.preco)}</span>
+                    </div>
+                    <button type="button" onClick={() => removeItem(item.id)} />
+                  </CartItem>
+                ))}
+              </ul>
+              <Prices>
+                Valor total
+                <span>{formatPrice(getTotalPrice())}</span>
+              </Prices>
+              <Button
+                title="Clique para continuar com a compra"
+                type="button"
+                onClick={goToCheckout}
+              >
+                Continuar com a entrega
+              </Button>
+              <Button
+                onClick={closeCart}
+                title="Voltar as compras"
+                type="button"
+              >
+                Voltar as compras
+              </Button>
+            </>
+          ) : (
+            <div className="empty-cart">
+              <p>Seu carrinho está vazio.</p>
+              <Button
+                onClick={closeCart}
+                title="Voltar as compras"
+                type="button"
+              >
+                Voltar as compras
+              </Button>
+            </div>
+          )}
+        </Sidebar>
       </CartContainer>
-      {showCheckout && <Checkout />}
+      {showCheckout && <Checkout onClose={() => setShowCheckout(false)} />}
     </>
   )
 }
